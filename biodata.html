@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="newbiodata.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Additional CSS for backgrounds */
+    body {
+      background-color: #f0f0f0; /* Light gray background */
+      background-image: url("j.jpg"); /* Background image */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation Section -->
+<nav>
+  <div class="nav__content">
+    <div class="logo">
+      <a href="#">My<span>Bio</span></a>
+    </div>
+    <input type="checkbox" id="check" class="checkbox">
+    <label for="check"><i class="fas fa-bars"></i></label>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+	
+</nav>
+<!-- Hero Section -->
+<header class="hero" id="about">
+  <div class="hero__content">
+    <h1>Hello, I'm <span class="highlight">Insyirah</span></h1>
+    <p class="animated-text">A passionate <span class="highlight">Multimedia Student</span> and <span class="highlight">Energetic Person</span></p>
+    
+    <!-- Image Carousel (Interactive) -->
+    <div class="image-carousel">
+      <div class="carousel-images">
+        <img src="chimney.jpg" alt="Image 1">
+        <img src="lab.jpg" alt="Image 2">
+        <img src="camping.jpg" alt="Image 3">
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero__image">
+    <div class="hero__circle">
+      <img src="e.jpg" alt="Profile Image">
+    </div>
+  </div>
+  
+  <!-- Subtle Background Animation -->
+  <div class="background-animation"></div>
+
+
+<!-- Styling for Carousel and Animation -->
+<style>
+  .highlight {
+    color: #f39c12;
+  }
+
+  /* Image Carousel Styling */
+  .image-carousel {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  .carousel-images img {
+    width: 100px; /* Smaller size */
+    height: 100px; /* Smaller size */
+    object-fit: cover;
+    border-radius: 50%; /* Make images circular */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-images img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Text Animation */
+  .animated-text {
+    animation: textAnimation 4s ease-in-out infinite;
+  }
+
+  @keyframes textAnimation {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  /* Subtle Background Animation */
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    z-index: -1;
+    animation: bgAnimation 10s ease-in-out infinite;
+  }
+
+  @keyframes bgAnimation {
+    0% { background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)); }
+    50% { background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)); }
+    100% { background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)); }
+  }
+</style>
+
+
+  <!-- Floating Hearts -->
+  <div class="heart-container">
+    <div class="heart heart1"></div>
+    <div class="heart heart2"></div>
+    <div class="heart heart3"></div>
+    <div class="heart heart4"></div>
+    <div class="heart heart5"></div>
+  </div>
+</header>
+
+
+
+
+<!-- About Section -->
+<section class="about">
+  <div class="container">
+    <div class="about__content">
+      <h2>About Me</h2>
+      <div class="about__info">
+        <p>
+          I am 21 years old and I am from Pitas,Sabah. I am a second children in my siblings and have 1 brothers and 2 younger sisters.
+		  I am Dusun people. My hometown is at Kundasang,Ranau and Kota Belud.My father works as a pharmicist and my mother works as a nurse.
+		I loved cats and singing.I wish to have a big car and a beautiful house so I can bring my family to live there.
+		
+        </p>
+        <p>
+          With a background in Information Technology, I have learned on various projects ranging from 
+          simple websites to complex web applications.
+		I am year 3 student of Multimedia Technology and will graduate at December 2027
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="education" id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline__event">
+        <h3>Bachelor of Multimedia Technology</h3>
+        <span>Universiti Malaysia Sabah, 2022</span>
+        <p>Specialization in Multimedia Technology</p>
+      </div>
+      <div class="timeline__event">
+        <h3>Foundation of IT</h3>
+        <span>Universiti Malaysia Sabah, 2021</span>
+        <p>Focus on basic of information of technology</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Class Schedule Section -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <h2>Class Schedule</h2>
+    <p>Here is my weekly class schedule. Feel free to reach out if you need more information!</p>
+
+    <div class="schedule-table-wrapper">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Class</th>
+            <th>Location</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+  <td rowspan="2">Monday</td> <!-- Rowspan used to merge the day -->
+  <td>8:00 AM - 10:00 AM</td>
+  <td>Cybersecurity</td>
+  <td>Podium D</td>
+  <td>Dr. Ainnur Hafizah</td>
+</tr>
+<tr>
+  <td>2:00 PM - 4:00 PM</td> <!-- New subject row -->
+  <td>E-Commerce</td>
+  <td>Bilik Kuliah 3</td>
+  <td>Dr. Dinna</td>
+</tr>
+
+          <tr>
+            <td>Tuesday</td>
+            <td>2:00 PM - 4:00 PM</td>
+            <td>Augmented Reality</td>
+            <td>Podium B</td>
+            <td>Dr. Ryan</td>
+          </tr>
+          <tr>
+  <td rowspan="2">Wednesday</td> <!-- Rowspan used to merge the day -->
+  <td>8:00 AM - 10:00 AM</td>
+  <td>Computer Graphic</td>
+  <td>Podium A</td>
+  <td>Dr. Wan Aishya</td>
+</tr>
+<tr>
+  <td>2:00 PM - 4:00 PM</td> <!-- New subject row -->
+  <td>Multimedia Web Programming</td>
+  <td>Podium E</td>
+  <td>Dr. Faraha</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills__grid">
+      <div class="skill">
+        <i class="fab fa-html5"></i>
+        <h4>HTML</h4>
+      </div>
+      <div class="skill">
+        <i class="fab fa-css3-alt"></i>
+        <h4>CSS</h4>
+      </div>
+      <div class="skill">
+        <i class="fab fa-js"></i>
+        <h4>JavaScript</h4>
+      </div>
+      <div class="skill">
+        <i class="fab fa-python"></i>
+        <h4>Python</h4>
+      </div>
+      <div class="skill">
+        <i class="fas fa-database"></i>
+        <h4>SQL</h4>
+		</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Have any questions or want to work together? Feel free to reach out!</p>
+
+    <form action="https://formspree.io/f/xovqzboq" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Send Message</button>
+    </form>
+
+   <!-- Button to Link to Homepage -->
+<div class="redirect">
+  <a href="homepage.html">
+    <button class="btn go-home-btn">Go to Homepage</button> <!-- Link to Homepage -->
+  </a>
+</div>
+
+<footer>
+  <p>&copy; 2024 Nurul Insyirah binti Jimal. All Rights Reserved.</p>
+</footer>
+	</div>
+	</section>
+</body>
+</html>
+

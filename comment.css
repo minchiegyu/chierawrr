@@ -1,0 +1,414 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+  overflow-x: hidden;
+  height: 100%;
+  animation: changeBg 15s infinite;  /* Background transition */
+}
+
+/* Full Page Comment Section */
+.comment-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #ec407a;  /* Soft pink */
+  margin-bottom: 1rem;
+}
+
+.comment-section p {
+  font-size: 1.3rem;
+  color: #616161;  /* Subtle grey */
+  margin-bottom: 2.5rem;
+}
+
+/* Keyframe Animation for Background Change */
+@keyframes changeBg {
+  0% {
+    background-image: url('pt1.jpg');  /* Replace with your first image */
+  }
+  33% {
+    background-image: url('pt2.jpg');  /* Replace with your second image */
+  }
+  66% {
+    background-image: url('pt3.jpg');  /* Replace with your third image */
+  }
+  100% {
+    background-image: url('p1.jpg');  /* Loop back to the first image */
+  }
+}
+
+/* Comment Form */
+.comment-form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ec407a;
+  border-radius: 12px;
+  background-color: #fafafa;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+textarea {
+  resize: none;
+  height: 130px;
+}
+
+button.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ec407a;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.submit-btn:hover {
+  background-color: #f06292;
+}
+
+/* Display Comments Section */
+.comments {
+  margin-top: 3rem;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  margin-bottom: 1rem;
+}
+
+.comment p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Go to Home Button */
+.go-home {
+  margin-top: 2rem;
+}
+
+.go-home-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #ec407a; /* Soft pink */
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.go-home-btn:hover {
+  background-color: #f06292; /* Darker pink on hover */
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+  .comment-section {
+    padding: 3rem 1rem;
+  }
+
+  .comment-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+button.submit-btn:hover {
+  background-color: #f06292;
+}
+
+/* Display Comments Section */
+.comments {
+  margin-top: 3rem;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  margin-bottom: 1rem;
+}
+
+.comment p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .comment-section {
+    padding: 3rem 1rem;
+  }
+
+  .comment-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Form Styles */
+.comment-form {
+  width: 80%; /* Makes the form width 80% of the screen */
+  max-width: 600px; /* Ensures the form doesn't get too large */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ec407a;  /* Matching pink border */
+  border-radius: 12px;
+  background-color: #fafafa;  /* Light background */
+  font-size: 1.1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f06292;  /* Darker pink on focus */
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 130px;
+}
+
+button.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ec407a;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+  background-color: #f06292;  /* Darker pink on hover */
+}
+
+/* Display Comments */
+.comments {
+  margin-top: 3rem;
+  width: 80%; /* Align comments center and match the width */
+  max-width: 600px; /* Ensure comments section is not too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  margin-bottom: 1rem;
+}
+
+.comment p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .comment-section {
+    padding: 3rem 1rem;
+  }
+
+  .comment-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .media-container {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+.media-container:hover .media-image:nth-child(1) {
+  opacity: 1;
+}
+
+.media-container:hover .media-image:nth-child(2) {
+  opacity: 1;
+}
+
+.media-container:hover .media-image:nth-child(3) {
+  opacity: 1;
+}
+
+.media-container .media-image:nth-child(1) {
+  opacity: 1; /* First image is visible by default */
+}
+
+.media-description {
+  font-size: 1.2rem;
+  color: #ec407a;  /* Matching pink */
+  margin-top: 1rem;
+}
+
+/* Form Styles */
+.comment-form {
+  width: 80%; /* Makes the form width 80% of the screen */
+  max-width: 600px; /* Ensures the form doesn't get too large */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ec407a;  /* Matching pink border */
+  border-radius: 12px;
+  background-color: #fafafa;  /* Light background */
+  font-size: 1.1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f06292;  /* Darker pink on focus */
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 130px;
+}
+
+button.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ec407a;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+  background-color: #f06292;  /* Darker pink on hover */
+}
+
+/* Display Comments */
+.comments {
+  margin-top: 3rem;
+  width: 80%; /* Align comments center and match the width */
+  max-width: 600px; /* Ensure comments section is not too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  margin-bottom: 1rem;
+}
+
+.comment p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .comment-section {
+    padding: 3rem 1rem;
+  }
+
+  .comment-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .media-container {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+

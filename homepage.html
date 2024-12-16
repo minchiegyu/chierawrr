@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Nurul Insyirah Homepage</title>
+	<style>
+    .social__icons {
+  display: flex;
+  gap: 1rem; /* Adjust spacing between icons */
+  justify-content: center; /* Center icons horizontally */
+  align-items: center; /* Align icons vertically */
+  margin-top: 2rem; /* Adjust spacing from other sections */
+}
+
+.social__icons .icon {
+  font-size: 2rem; /* Adjusted icon size, bigger but not too large */
+  color: var(--primary-color); /* Match the theme */
+  cursor: pointer; /* Add hover pointer */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add smooth effects */
+}
+
+.social__icons .icon:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+  color: var(--primary-color-dark); /* Darker color on hover */
+}
+
+/* Optional: Positioning the icons in a specific location */
+.social__icons {
+  position: absolute; /* Use absolute positioning if needed */
+  bottom: 1rem; /* Distance from the bottom of the section/page */
+  right: 1rem; /* Distance from the right side */
+}
+		/* Adjust the Telegram icon specifically */
+.social__icons .ri-telegram-line {
+  font-size: 2rem; /* Adjust the size of the Telegram icon */
+  color: var(--primary-color); /* Match the theme color */
+  cursor: pointer; /* Pointer on hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add smooth hover effects */
+  line-height: 1; /* Align the icon vertically */
+  vertical-align: middle; /* Ensure it aligns with others */
+}
+
+.social__icons .ri-telegram-line:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+  color: var(--primary-color-dark); /* Darker color on hover */
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav__content">
+      <div class="logo"><a href="#">Inchie</a></div>
+      <label for="check" class="checkbox">
+        <i class="ri-menu-line"></i>
+      </label>
+      <input type="checkbox" name="check" id="check" />
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="biodata.html">My Biodata</a></li> <!-- Link to Biodata Page -->
+        <li><a href="portfolio.html">My Portfolio</a></li>
+        <li><a href="myvideonew.html">My Video</a></li>
+        <li><a href="yourcomment.html">Your Comments</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section" id="home">
+    <div class="section__container">
+      <div class="content">
+        <p class="subtitle">HELLO</p>
+        <h1 class="title">
+          I'm <span>Insyirah<br />a</span> Multimedia Technology student
+        </h1>
+        <p class="description">
+          Welcome to my student homepage! I'm Insyirah, a year 3 student of Bachelor of Multimedia Technology.
+        </p>
+       <div class="action__btns">
+  <button class="hire__me" onclick="window.location.href='biodata.html';">About Me</button> <!-- Link to Biodata -->
+  <button class="portfolio" onclick="window.location.href='portfolio.html';">Portfolio</button>		  
+</div>
+      </div>
+		
+      <div class="image">
+        <img src="raya.jpg" alt="profile" />
+      </div>
+    </div>
+  </section>
+	<!-- Social Icons -->
+        <div class="social__icons">
+          <a href="https://www.instagram.com/chierawrr" target="_blank" title="Instagram">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://www.tiktok.com/@s_chiez1" target="_blank" title="TikTok">
+            <i class="ri-tiktok-line"></i>
+          </a>
+         <a href="https://t.me/m2ingu" target="_blank" class="icon">
+    <i class="ri-telegram-line"></i> <!-- Telegram Icon -->
+  </a>
+        </div>
+	
+</body>
+</html>
+
+
+

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charming Video Gallery</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed; /* Replace with your image */
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Intro Section */
+    .intro-section {
+      text-align: center;
+      padding: 30px;
+      background: rgba(240, 250, 240, 0.9); /* Soft mint green with transparency */
+      border: 3px solid #a1d1b7; /* Mint green border */
+      border-radius: 20px;
+      margin: 20px auto;
+      width: 90%;
+      box-shadow: 0 4px 10px rgba(161, 209, 183, 0.2);
+      opacity: 0;
+      animation: fadeIn 2s forwards; /* Subtle fade-in animation */
+    }
+
+    /* 3D Text Effect on Title */
+    .intro-section h1 {
+      font-size: 3rem;
+      color: #7a7de2; /* Cool lavender */
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease-out forwards;
+      /* Strong 3D effect with multiple layers */
+      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), 
+                   10px 10px 20px rgba(122, 125, 226, 0.5), 
+                   15px 15px 25px rgba(122, 125, 226, 0.7);
+      transform: rotateX(10deg) rotateY(15deg); /* Adds 3D angle */
+      transition: transform 0.3s ease;
+    }
+
+    .intro-section h1:hover {
+      transform: rotateX(0deg) rotateY(0deg) scale(1.1); /* Hover effect */
+    }
+
+    .intro-section p {
+      font-size: 1.3rem;
+      color: #4a5c5c;
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .homepage-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #fff;
+      background: #7a7de2; /* Lavender button */
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(122, 125, 226, 0.3);
+    }
+
+    .homepage-btn:hover {
+      background: #939bf7;
+      transform: translateY(-3px);
+    }
+
+    /* Animation for intro text */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Video Gallery */
+    .video-gallery {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .video-gallery h2 {
+      font-size: 2.5rem;
+      color: #6f74da; /* Soft lavender */
+      margin-bottom: 30px;
+      font-family: 'Pacifico', cursive;
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Individual Video Box */
+    .video-box {
+      background: rgba(240, 255, 240, 0.9); /* Soft mint green */
+      border: 2px solid #a1d1b7; /* Mint green border */
+      border-radius: 15px;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(161, 209, 183, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Hover Effect */
+    .video-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(161, 209, 183, 0.5);
+    }
+
+    /* Modern Border Style */
+    .video-box video {
+      border-radius: 10px;
+      border: 3px solid #a1d1b7; /* Soft mint border around video */
+    }
+
+    /* Video Title */
+    .video-title {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-family: 'Pacifico', cursive;
+      background: #6f74da; /* Soft lavender background */
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(161, 209, 183, 0.2);
+    }
+
+    /* Video Description */
+    .video-description {
+      font-size: 1rem;
+      color: black;
+      font-style: italic;
+      margin-top: 10px;
+      background: transparent;
+      transition: color 0.3s ease;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      position: relative;
+      background: rgba(240, 250, 240, 0.9);
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(161, 209, 183, 0.4);
+      border: 3px solid #a1d1b7;
+      animation: popUp 0.3s ease-out;
+    }
+
+    .modal-content video {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      border: 3px solid #d0e0d0;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #a1d1b7;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #93c2b8;
+    }
+
+    @keyframes popUp {
+      from {
+        transform: scale(0.9);
+        opacity: 0.5;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+	<style>
+  .cartoon-animation {
+    width: 200px;
+    height: 200px;
+    background-image: url("pngwing.com (1).png"); /* Replace with your cartoon image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    animation: bounce 3s infinite ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px); /* Bouncing height */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="cartoon-animation"></div>
+
+<body>
+
+  <!-- Intro Section -->
+  <div class="intro-section">
+    <h1>Welcome to the INCHIE Video Gallery</h1>
+    <p>Enjoy the most heartwarming and adorable videos!</p>
+    <a href="homepage.html" class="homepage-btn">Go to Homepage</a>
+  </div>
+  <!-- Video Gallery -->
+  <div class="video-gallery">
+    <h2>Featured Videos</h2>
+    <div class="video-container">
+      <!-- Video Box 1 -->
+      <div class="video-box">
+        <p class="video-title">Slice of Life</p>
+        <video width="250" controls>
+          <source src="vid1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">A short video about my life recap</p>
+      </div>
+
+      <!-- Video Box 2 -->
+      <div class="video-box">
+        <p class="video-title">Summary of Raya 2024</p>
+        <video width="250" controls>
+          <source src="vid2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Enjoy the picture of mine during raya 2024</p>
+      </div>
+
+      <!-- Video Box 3 -->
+      <div class="video-box">
+        <p class="video-title">Juhailin Family Day 2023</p>
+        <video width="250" controls>
+          <source src="vid3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Follow this video to see my family play at sukaneka</p>
+      </div>
+
+      <!-- Video Box 4 -->
+      <div class="video-box">
+        <p class="video-title">My Big Family</p>
+        <video width="250" controls>
+          <source src="vid4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Short video of my family images</p>
+      </div>
+
+      <!-- Video Box 5 -->
+      <div class="video-box">
+        <p class="video-title">360 Video Tamu Gadang</p>
+        <video width="250" controls>
+          <source src="vid5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">First time take a video with 360</p>
+      </div>
+
+      <!-- Video Box 6 -->
+      <div class="video-box">
+        <p class="video-title">TIKTOK Time</p>
+        <video width="250" controls>
+          <source src="vid6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Making a Tiktok video before going back after the camping</p>
+      </div>
+
+      <!-- Video Box 7 -->
+      <div class="video-box">
+        <p class="video-title">Jogging DUMP</p>
+        <video width="250" controls>
+          <source src="vid7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Just an edit video after finished joggiing</p>
+      </div>
+
+      <!-- Video Box 8 -->
+      <div class="video-box">
+        <p class="video-title">Annual Camping 2024</p>
+        <video width="250" controls>
+          <source src="vid8.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-description">Camping with cousins at Menteki Hideout Campsite</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video id="modalVideo" width="100%" controls>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const videoBoxes = document.querySelectorAll(".video-box");
+      const modal = document.getElementById("videoModal");
+      const modalVideo = document.getElementById("modalVideo");
+      const closeModal = document.querySelector(".close");
+
+      videoBoxes.forEach((box) => {
+        box.addEventListener("click", () => {
+          const videoSrc = box.querySelector("video").getAttribute("src");
+          modalVideo.src = videoSrc;
+          modal.style.display = "flex";
+          modalVideo.play();
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
